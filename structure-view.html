@@ -1,0 +1,59 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-image/iron-image.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+
+<!--
+`structure-view`
+glyconnect structure view
+
+@demo demo/index.html
+-->
+
+<dom-module id="structure-view">
+  <template>
+    <style is="custom-style">
+      :host {
+        display: block;
+      }
+      #struct {
+        width: 200px;
+        height: 200px;
+      }
+      #plain-tabs {
+        width: 100%;
+      }
+    </style>
+    <div>
+      <h1> Structure </h1>
+      <h3> Details for the selected glycan structure </h3>
+    </div>
+    <div>
+      <iron-image sizing="contain" id="struct" alt="Structure 1599" src="./structure.png"></iron-image>
+    </div>
+    <div class="layout horizontal">
+        <paper-tabs class="flex" id="plain-tabs" selected="0">
+        <paper-tab>References</paper-tab>
+        <paper-tab>Enzymes</paper-tab>
+        <paper-tab>Family</paper-tab>
+        <paper-button class="indigo">Taxonomy</paper-button>
+        </paper-tabs>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'structure-view',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'structure-view',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
