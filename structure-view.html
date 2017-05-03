@@ -48,8 +48,8 @@ glyconnect structure view
     <div>
       <iron-image sizing="contain" id="struct" alt="Structure 1599" src="./structure.png"></iron-image>
     </div>
-    <div>
-      <paper-tabs id="plain-tabs" selected="{{selected}}">
+    <div id="plain-tabs" >
+      <paper-tabs selected="{{selected}}">
           <paper-tab>References</paper-tab>
           <paper-tab>Enzymes</paper-tab>
           <paper-tab>Family</paper-tab>
@@ -123,9 +123,9 @@ glyconnect structure view
                   </tr>
                 </tbody>
               </table></div>
-            <div>Page 2</div>
-            <div>Page 3</div>
-          </iron-pages>
+          <div>Page 2</div>
+          <div>Page 3</div>
+        </iron-pages>
       <div id = "but">
           <paper-button class="indigo">Taxonomy</paper-button>
           <paper-button class="indigo">Text</paper-button>
