@@ -76,7 +76,7 @@ glyconnect structure view
                 border: none;
                 border-spacing: 50 0;
             }*/
-            #clm3 {
+            /*#clm3 {
                     width: 20%;
                 }
             #clm2 {
@@ -85,32 +85,43 @@ glyconnect structure view
             }
             #clm1 {
                     width: 60%;
-                }
+                }*/
+            td {
+                width: 60%;
+            }
+            td + td {
+              width: 10%;
+              text-align: center;
+            }
+            td + td + td{
+              width: 20%;
+              text-align: center;
+            }
             </style>
               <thead>
                 <tr>
 
             <th class="">
-                <a href="" id="clm1">Title</a>
+                <a href="">Title</a>
             </th>
 
 
             <th class="">
-                <a href="" id="clm2">Year</a>
+                <a href="">Year</a>
             </th>
 
 
             <th class="">
-                <a href="" id="clm3">Authors</a>
+                <a href="">Authors</a>
             </th>
 
                  </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a href="../references/2774">Structural studies on IgG oligosaccharides of patients with primary Sjogren&#x27;s syndrome.</a></td>
-                    <td>2002</td>
-                    <td> Kuroda Y, Nakata M, Makino A, Matsumoto A, Ohashi K, Itahashi K, Takeuchi F, Goto M, Kojima N, Mizuochi T</td>
+                    <td id="clm1"><a href="../references/2774">Structural studies on IgG oligosaccharides of patients with primary Sjogren&#x27;s syndrome.</a></td>
+                    <td  id="clm2">2002</td>
+                    <td id="clm3"> Kuroda Y, Nakata M, Makino A, Matsumoto A, Ohashi K, Itahashi K, Takeuchi F, Goto M, Kojima N, Mizuochi T</td>
                   </tr>
 
                   <tr>
