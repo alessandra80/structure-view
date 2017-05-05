@@ -53,7 +53,7 @@ glyconnect structure view
       paper-tabs{
         --paper-tabs-selection-bar-color: red;
         --paper-tabs-selection-bar-height: 50px;
-        border-color: white;
+        border-radius: 100px;
       }
       .indigo {
         background-color: var(--paper-indigo-500);
@@ -127,16 +127,16 @@ glyconnect structure view
             </paper-material>
             <div>
               <bs-timeline>
+                <paper-card image="{{imgsrc}}/enzymes/step0.png">
+                </paper-card>
               	<bs-timeline-entry title="N-Core" badge="plus" >
                   <paper-card image="{{imgsrc}}/enzymes/step0.png">
                   </paper-card>
-              	</bs-timeline-entry>
+              	</bs-imeline-entry>
                 <bs-timeline-entry title="Enzyme: GnT1" badge="plus" inverse="true" time ="">
                   <paper-card image="{{imgsrc}}/enzymes/step1.png">
                   </paper-card>
               	</bs-timeline-entry>
-              </bs-timeline>
-              <bs-timeline>
               	<bs-timeline-entry title="Enzyme: GnTIV" badge="plus">
                   <paper-card image="{{imgsrc}}/enzymes/step2.png">
                   </paper-card>
@@ -145,7 +145,6 @@ glyconnect structure view
                   <paper-card image="{{imgsrc}}/enzymes/step3.png">
                   </paper-card>
               	</bs-timeline-entry>
-              </bs-timeline>
               <bs-timeline-entry title="Enzyme: α 1-6 fucosidase" badge="plus">
                 <paper-card image="{{imgsrc}}/enzymes/step4.png">
                 </paper-card>
