@@ -22,7 +22,7 @@ glyconnect structure view
         height: 400px;
       }
       #plain-tabs {
-        width: 80%;
+        width: 100%;
         display: inline-block;
       }
       #image {
@@ -77,70 +77,19 @@ glyconnect structure view
           <paper-tab>Family</paper-tab>
       </paper-tabs>
         <iron-pages selected="{{selected}}">
-          <div>
-            <table class="computers table table-striped" >
-            <style>
-            td {
-                width: 60%;
-            }
-            td + td {
-              width: 10%;
-              text-align: center;
-            }
-            td + td + td{
-              width: 20%;
-              text-align: left;
-            }
-            </style>
-            <br><br>
-              <thead>
-                <tr>
-
-            <th class="">
-                Title
-            </th>
-
-
-            <th class="">
-                Year
-            </th>
-
-
-            <th class="">
-                Authors
-            </th>
-
-                 </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a href="../references/2800">Abnormal biantennary sugar chains are expressed in human chorionic gonadotropin produced in the choriocarcinoma cell line, JEG-3.</a></td>
-                    <td>2004</td>
-                    <td>Takamatsu S, Katsumata T, Inoue N, Watanabe T, Fujibayashi Y, Takeuchi M</td>
-                  </tr>
-
-                  <tr>
-                    <td><a href="../references/1590">Characteristics of asparagine-linked sugar chains of sphingolipid activator protein 1 purified from normal human liver and GM1 gangliosidosis (type 1) liver.</a></td>
-                    <td>1990</td>
-                    <td>Yamashita K, Inui K, Totani K, Kochibe N, Furukawa M, Okada S</td>
-                  </tr>
-
-                  <tr>
-                    <td><a href="../references/1866">Altered glycosylation of human chorionic gonadotropin decreases its hormonal activity as determined by cyclic-adenosine 3&#x27;,5&#x27;-monophosphate production in MA-10 cells.</a></td>
-                    <td>1990</td>
-                    <td>Amano J, Nishimura R, Sato S, Kobata A</td>
-                  </tr>
-
-                  <tr>
-                    <td><a href="../references/2804">Structures of the asparagine-linked sugar chains of human chorionic gonadotropin produced in choriocarcinoma. Appearance of triantennary sugar chains and unique biantennary sugar chains.</a></td>
-                    <td>1983</td>
-                    <td>Mizuochi T, Nishimura R, Derappe C, Taniguchi T, Hamamoto T, Mochizuki M, Kobata A</td>
-                  </tr>
-                </tbody>
-              </table></div>
-          <div>Page 2</div>
-          <div>Page 3</div>
-        </iron-pages>
+            <paper-material elevation="2" class="flex" style="background: #eeeeee;">
+              <paper-toolbar>
+                <div class="title">References (1)</div>
+              </paper-toolbar>
+              <div class="layout wrap">
+                <paper-card heading="Structural study of the oligosaccharide moieties of sphingolipid activator proteins, saposins A, C and D obtained from the spleen of a Gaucher patient." style="margin: 10px;padding: 10px;">
+                  <div class="card-content layout vertical">
+                    <div>Authors: Ito K, Takahashi N, Takahashi A, Shimada I, Arata Y, O'Brien J, Kishimoto Y.</div>
+                    <paper-button class="indigo" style="width: 150px;margin-top:12px;">Go to Pubmed</paper-button>
+                  </div>
+                </paper-card>
+              </div>
+            </paper-material>
     </div>
 
   </template>
