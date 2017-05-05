@@ -76,6 +76,7 @@ glyconnect structure view
           <paper-tab>References (4)</paper-tab>
           <paper-tab>Enzymes</paper-tab>
           <paper-tab>Family</paper-tab>
+          <paper-tab>Associations</paper-tab>
       </paper-tabs>
         <iron-pages selected="{{selected}}">
             <paper-material elevation="2" class="flex" style="background: #eeeeee;">
@@ -119,7 +120,18 @@ glyconnect structure view
                <paper-card image="{{imgsrc}}/{{item}}.png" class="red">
                </paper-card>
              </template>
+
           </div>
+          <div>
+            <paper-material elevation="2" class="flex" >
+            <div class="layout wrap">
+              <paper-card image="{./family/structure_3381.png"  style="margin: 10px;" elevation="0">
+              </paper-card>
+            </div>
+          </paper-material>
+        </div>
+
+
         </iron-pages>
     </div>
 
