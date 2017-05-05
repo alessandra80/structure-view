@@ -114,7 +114,12 @@ glyconnect structure view
               </div>
             </paper-material>
             <div>Page 2</div>
-            <div>Page 3</div>
+            <div>
+              <template is="dom-repeat" items="{{pictures}}">
+               <paper-card image="{{imgsrc}}/{{item}}.png" class="red">
+               </paper-card>
+             </template>
+          </div>
         </iron-pages>
     </div>
 
@@ -129,6 +134,16 @@ glyconnect structure view
         selected: {
           type: Number,
           value: 0,
+        },
+        pictures: {
+          type: Array,
+          value: function (){
+            return [3361, 3381, 3383, 3389, 4344, 6689, 7075, 7076, 7261, 7291]
+          },
+          imgsrc: {
+            type: String,
+            value: function() {return this.resolveUrl('./family')
+            },
         },
       },
 
