@@ -3,6 +3,7 @@
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../iron-pages/iron-pages.html">
+<link rel="import" href="bower_components/bs-timeline/bs-timeline.html">
 
 <!--
 `structure-view`
@@ -125,26 +126,19 @@ glyconnect structure view
               </div>
             </paper-material>
             <div>
-              <paper-material elevation="2" class="flex" style="background: #eeeeee">
-              <div class="layout wrap">
-                <paper-card image="{{imgsrc}}/enzymes/step0.png" class="red">
-                  <div class="card-content">N-Core</div>
-                </paper-card>
-                <paper-card image="{{imgsrc}}/enzymes/step1.png" class="red">
-                    <div class="card-content">Enzyme: GnTI</div>
+              <bs-timeline>
+              	<bs-timeline-entry title="N-Core" badge="plus">
+                  <paper-card image="{{imgsrc}}/enzymes/step0.png" class="red">
+                    <div class="card-content">N-Core</div>
                   </paper-card>
-                <paper-card image="{{imgsrc}}/enzymes/step2.png" class="red">
-                    <div class="card-content">Enzyme: GnTIV</div>
+              	</bs-timeline-entry>
+                <bs-timeline-entry title="N-Core" badge="plus">
+                  <paper-card image="{{imgsrc}}/enzymes/step0.png" class="red">
+                    <div class="card-content">N-Core</div>
                   </paper-card>
-                <paper-card image="{{imgsrc}}/enzymes/step3.png" class="red">
-                    <div class="card-content">Enzyme: β4GalT1</div>
-                  </paper-card>
-                <paper-card image="{{imgsrc}}/enzymes/step4.png" class="red">
-                    <div class="card-content">Enzyme: α 1-6 fucosidase</div>
-                  </paper-card>
-              </div>
-            </paper-material>
-          </div>
+              	</bs-timeline-entry>
+              </bs-timeline>
+           </div>
             <div>
               <paper-material elevation="2" class="flex" style="background: #eeeeee;">
                 <template is="dom-repeat" items="{{pictures}}">
