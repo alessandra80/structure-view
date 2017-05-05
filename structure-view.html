@@ -116,11 +116,12 @@ glyconnect structure view
             </paper-material>
             <div>Page 2</div>
             <div>
-              <template is="dom-repeat" items="{{pictures}}">
-               <paper-card image="{{imgsrc}}/{{item}}.png" class="red">
-               </paper-card>
-             </template>
-
+              <paper-material elevation="2" class="flex" style="background: #eeeeee;">
+                <template is="dom-repeat" items="{{pictures}}">
+                 <paper-card image="{{imgsrc}}/{{item}}.png" class="red">
+                 </paper-card>
+               </template>
+             </paper-material>
           </div>
           <div>
             <paper-material elevation="2" class="flex" >
