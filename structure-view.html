@@ -45,7 +45,7 @@ glyconnect structure view
         margin: 20px;
       }
       paper-tab.iron-selected {
-        color: white;
+        color: #ffff8d;
       }
       paper-tab {
         font-size: 22px;
@@ -56,7 +56,7 @@ glyconnect structure view
         --paper-tabs-selection-bar-height: 50px;
         border-radius: 100px;
       }
-      /*.indigo {
+      .indigo {
         background-color: var(--paper-indigo-500);
         color: white;
         border-radius:5px;
@@ -64,7 +64,7 @@ glyconnect structure view
             background-color: var(--paper-pink-a200) !important;
             color: white !important;
         };
-      }*/
+      }
 
     </style>
     <div>
@@ -86,9 +86,9 @@ glyconnect structure view
     <div>
       <paper-tabs class="indigo" selected="{{selected}}">
           <paper-tab>References (4)</paper-tab>
-          <paper-tab>Enzymes</paper-tab>
+          <paper-tab style="background-color: #337ab7;">Enzymes</paper-tab>
           <paper-tab>Family</paper-tab>
-          <paper-tab>Associations</paper-tab>
+          <paper-tab style="background-color: #337ab7;">Associations</paper-tab>
       </paper-tabs>
         <iron-pages selected="{{selected}}">
             <paper-material elevation="2" class="flex" style="background: #eeeeee;">
