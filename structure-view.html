@@ -5,6 +5,7 @@
 <link rel="import" href="../paper-material/paper-material.html">
 <link rel="import" href="../paper-card/paper-card.html">
 <link rel="import" href="../iron-pages/iron-pages.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bs-timeline/bs-timeline.html">
 <!--
@@ -31,6 +32,11 @@ glyconnect structure view
             .red {
                 background: #eb2011;
                 color: white;
+                margin:10px;
+                max-width: 230px;
+            }
+
+            .familyCard {
                 margin:10px;
                 max-width: 230px;
             }
@@ -64,7 +70,7 @@ glyconnect structure view
             <h3> Details for the selected glycan structure </h3>
         </div>
         <div id="image">
-            <iron-image sizing="contain" id="struct" alt="Structure 1599" src="./structure.png"></iron-image>
+            <iron-image style="width:300px; height:200px;" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[structureId]]?format=cfg"></iron-image>
         </div>
 
 
@@ -134,10 +140,9 @@ glyconnect structure view
                     </bs-timeline>
                 </div>
                 <div>
-                    <paper-material elevation="2" class="flex" style="background: #eeeeee;">
-                        <template is="dom-repeat" items="{{pictures}}">
-                            <paper-card image="{{imgsrc}}/family/{{item}}.png" class="red">
-                            </paper-card>
+                    <paper-material elevation="2" class="layout horizontal wrap" style="background: #eeeeee;">
+                        <template is="dom-repeat" items="[[familyStructures]]">
+                            <paper-material class="layout horizontal" style="background-color: #ffffff" elevation="2"><iron-image style="width:230px;height:150px" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[item.id]]?format=cfg"></iron-image></paper-material>
                         </template>
                     </paper-material>
                 </div>
@@ -149,10 +154,22 @@ glyconnect structure view
                         </div>
                     </paper-material>
                 </div>
-
-
             </iron-pages>
         </div>
+        <iron-ajax
+                id="structureCall"
+                handle-as="json"
+                method="GET"
+                last-response="{{structureData}}"
+                on-response="handleResponse"
+        ></iron-ajax>
+        <iron-ajax
+                id="familyCall"
+                url="http://mendel.isb-sib.ch:8083/api/structures?composition={{structureComposition}}"
+                handle-as="json"
+                method="GET"
+                last-response="{{familyStructures}}"
+        ></iron-ajax>
 
     </template>
 
@@ -164,7 +181,12 @@ glyconnect structure view
             properties: {
                 structureId: {
                     type: String,
-                    reflectToAttribute: true
+                    reflectToAttribute: true,
+                    observer: 'changeStructureId'
+                },
+
+                structureComposition:{
+                    type: String
                 },
 
                 selected: {
@@ -185,6 +207,19 @@ glyconnect structure view
                         return this.resolveUrl('./img')
                     }
                 }
+            },
+
+            changeStructureId: function(){
+                var sCall = this.$.structureCall;
+                sCall.url = "http://mendel.isb-sib.ch:8083/api/structures/"+this.structureId;
+                sCall.generateRequest();
+            },
+            handleResponse: function(){
+                //Create Family
+                this.structureComposition = this.structureData.composition;
+                this.$.familyCall.generateRequest();
+                //Create References
+                this.references = this.structureData.references;
             }
         });
     </script>
