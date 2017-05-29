@@ -88,9 +88,9 @@ glyconnect structure view
                       <template is="dom-repeat" items="[[references]]">
                         <paper-card style="margin: 10px;padding: 10px;width: 400px;">
                             <div class="card-content layout vertical">
-                                <h3 style="color: black"> [[item.title]]</h3>
+                                <h3 style="color: black"> [[item.title]] ([[item.year]])</h3>
                                 <div>[[item.authors]]</div>
-                                <a href="[[item.pubmed]"> <paper-button class="indigo" style="width: 150px;margin-top:12px;">Go to Pubmed</paper-button></a>
+                                <a href="https://www.ncbi.nlm.nih.gov/pubmed/[[item.pubmed_id]]"> <paper-button class="indigo" style="width: 150px;margin-top:12px;">Go to Pubmed</paper-button></a>
                             </div>
                         </paper-card>
                       </template>
