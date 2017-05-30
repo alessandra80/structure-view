@@ -44,16 +44,29 @@ glyconnect structure view
             paper-material {
                 margin: 20px;
             }
+            paper-tab:not(:last-child) {
+                border-right: solid;
+                border-color: #757575 ;
+                border-width: 1px;
+            }
             paper-tab.iron-selected {
-                color: #ffff8d;
+                background-color: var(--paper-indigo-500);
+                color: white;
+
             }
-            paper-tab {
-                font-size: 22px;
-            }
+
             paper-tabs{
-                --paper-tabs-selection-bar-color: red;
+              --paper-tabs-selection-bar-color: #eee;
+              background-color: #eeeeee;
+              color: black;
+              font-size: 20px;
+              font-weight: 600;
+              border-radius: 5px;
+              margin: 20px;
+              box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                /*--paper-tabs-selection-bar-color: red;
                 --paper-tabs-selection-bar-height: 50px;
-                border-radius: 100px;
+                border-radius: 100px;*/
             }
             .indigo {
                 background-color: var(--paper-indigo-500);
@@ -76,11 +89,11 @@ glyconnect structure view
 
 
         <div>
-            <paper-tabs class="indigo" selected="{{selected}}"  no-bar>
+            <paper-tabsselected="{{selected}}"  no-bar>
                 <paper-tab>References ({{lenR}})</paper-tab>
-                <paper-tab style="background-color: #337ab7;">Enzymes</paper-tab>
+                <paper-tab>Enzymes</paper-tab>
                 <paper-tab>Family</paper-tab>
-                <paper-tab style="background-color: #337ab7;">Associations</paper-tab>
+                <paper-tab>Associations</paper-tab>
             </paper-tabs>
             <iron-pages selected="{{selected}}">
                 <paper-material elevation="2" class="flex" style="background: #eeeeee;">
