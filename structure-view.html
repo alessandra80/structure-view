@@ -68,6 +68,11 @@ glyconnect structure view
                 --paper-tabs-selection-bar-height: 50px;
                 border-radius: 100px;*/
             }
+            #but {
+              width: 20%;
+              float: right;
+              display: inline-block;
+            }
             .indigo {
                 background-color: var(--paper-indigo-500);
                 color: white;
@@ -85,9 +90,11 @@ glyconnect structure view
         </div>
         <div class="layout horizontal flex" id="image">
             <iron-image style="width:300px; height:200px;" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[structureId]]?format=cfg"></iron-image>
-            <paper-material elevation="2" class="flex" style="background: #eeeeee">
-              Cross-references
-            </paper-material>
+            <div id = "but">
+              <paper-material elevation="2" class="flex" style="background: #eeeeee">
+                Cross-references
+              </paper-material>
+            </div>
         </div>
 
 
