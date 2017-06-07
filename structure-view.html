@@ -71,6 +71,7 @@ glyconnect structure view
             #but {
               width: 20%;
               float: right;
+              padding-top:
               display: inline-block;
             }
             .indigo {
@@ -91,10 +92,18 @@ glyconnect structure view
         <div class="layout horizontal flex" id="image">
             <iron-image style="width:300px; height:200px;" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[structureId]]?format=cfg"></iron-image>
             <div id = "but">
+              <div>
+                <h3> Structure format </h3>
+              </div>
+                <paper-button class="indigo">CFG/ESSENTIALS</paper-button>
+                <paper-button class="indigo">Text</paper-button>
+                <paper-button class="indigo">GlycoCT</paper-button>
+            </div>
+            <!-- <div id = "but">
               <paper-material elevation="2" class="flex" style="background: #eeeeee">
                 Cross-references
               </paper-material>
-            </div>
+            </div> -->
         </div>
 
 
