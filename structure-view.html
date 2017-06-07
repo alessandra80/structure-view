@@ -91,19 +91,18 @@ glyconnect structure view
         </div>
         <div class="layout horizontal flex" id="image">
             <iron-image style="width:300px; height:200px;" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[structureId]]?format=cfg"></iron-image>
-            <div id = "but">
+            <!-- <div id = "but">
               <div>
                 <h3> Structure format </h3>
               </div>
-                <paper-button class="indigo">CFG/ESSENTIALS</paper-button>
+                <paper-button class="indigo">GlyTouCan <a href="http://uniprot.org/uniprot/{{uniprotId}}">{{glytoucanId}}</a></paper-button>
                 <paper-button class="indigo">Text</paper-button>
-                <paper-button class="indigo">GlycoCT</paper-button>
-            </div>
-            <!-- <div id = "but">
-              <paper-material elevation="2" class="flex" style="background: #eeeeee">
-                Cross-references
-              </paper-material>
             </div> -->
+            <div id = "but">
+              <paper-material elevation="2" class="flex" style="background: #eeeeee">
+                GlyTouCan accession: <a href="http://uniprot.org/uniprot/{{touCan}}">{{touCan}}</a>
+              </paper-material>
+            </div>
         </div>
 
 
@@ -233,7 +232,11 @@ glyconnect structure view
                 this.$.familyCall.generateRequest();
                 //Create References
                 this.references = this.structureData.references;
-                this.lenR = this.references.length
+                this.lenR = this.references.length;
+                this.crossref = this.structureData.crossref;
+                console.log(this.crossref)
+                this.touCan = this.crossref[0].glytoucan.id;
+                console.log(this.touCan)
             }
         });
     </script>
