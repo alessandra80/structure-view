@@ -89,7 +89,9 @@ glyconnect structure view
             <h3> Details for the selected glycan structure </h3>
         </div>
         <div class="layout horizontal flex">
-            <iron-image id="image" style="width:300px; height:200px;" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[structureId]]?format=cfg"></iron-image>
+          <div id="image">
+            <iron-image style="width:300px; height:200px;" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[structureId]]?format=cfg"></iron-image>
+          </div>
             <!-- <div id = "but">
               <div>
                 <h3> Structure format </h3>
