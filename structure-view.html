@@ -232,9 +232,7 @@ glyconnect structure view
                 //Create References
                 this.references = this.structureData.references;
                 this.lenR = this.references.length;
-                var cr = "cross\u2212references"
-                console.log(cr)
-                this.crossref = this.structureData[cr];
+                this.crossref = this.structureData.crossreferences;
                 console.log(this.crossref)
                 this.touCan = this.crossref[0].glytoucan.id;
                 console.log(this.touCan)
