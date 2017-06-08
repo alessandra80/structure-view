@@ -99,7 +99,7 @@ glyconnect structure view
             </div> -->
             <div id = "but">
               <paper-material elevation="2" class="flex" style="background: #eeeeee">
-                GlyTouCan accession: <a href="http://uniprot.org/uniprot/{{touCan}}">{{touCan}}</a>
+                GlyTouCan accession: <a href="{{urlToucan}}">{{touCan}}</a>
               </paper-material>
             </div>
         </div>
@@ -235,7 +235,9 @@ glyconnect structure view
                 this.crossref = this.structureData.crossreferences;
                 console.log(this.crossref)
                 this.touCan = this.crossref[0].glytoucan.id;
-                console.log(this.touCan)
+                console.log(this.touCan);
+                this.urlToucan = this.crossref[0].glytoucan.url;
+                console.log(this.urlToucan)
             }
         });
     </script>
