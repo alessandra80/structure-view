@@ -235,11 +235,13 @@ glyconnect structure view
                 this.references = this.structureData.references;
                 this.lenR = this.references.length;
                 this.crossref = this.structureData.crossreferences;
-                console.log(this.crossref)
-                this.touCan = this.crossref[0].glytoucan.id;
-                console.log(this.touCan);
-                this.urlToucan = this.crossref[0].glytoucan.url;
-                console.log(this.urlToucan)
+                console.log(this.crossref);
+                if (this.crossref.length > 0) {
+                  this.touCan = this.crossref[0].glytoucan.id;
+                  console.log(this.touCan);
+                  this.urlToucan = this.crossref[0].glytoucan.url;
+                  console.log(this.urlToucan);
+                } else {this.urlToucan = ''}
             }
         });
     </script>
