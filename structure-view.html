@@ -27,7 +27,7 @@ glyconnect structure view
                 height: 400px;
             }
             #image {
-                width: 80%;
+                width: 70%;
                 display: inline-block;
             }
             .red {
@@ -44,16 +44,35 @@ glyconnect structure view
             paper-material {
                 margin: 20px;
             }
+            paper-tab:not(:last-child) {
+                border-right: solid;
+                border-color: #757575 ;
+                border-width: 1px;
+            }
             paper-tab.iron-selected {
-                color: #ffff8d;
+                background-color: var(--paper-indigo-500);
+                color: white;
+
             }
-            paper-tab {
-                font-size: 22px;
-            }
+
             paper-tabs{
-                --paper-tabs-selection-bar-color: red;
+              --paper-tabs-selection-bar-color: #eee;
+              background-color: #eeeeee;
+              color: black;
+              font-size: 20px;
+              font-weight: 600;
+              border-radius: 5px;
+              margin: 15px;
+              box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                /*--paper-tabs-selection-bar-color: red;
                 --paper-tabs-selection-bar-height: 50px;
-                border-radius: 100px;
+                border-radius: 100px;*/
+            }
+            #but {
+              width: 30%;
+              float: right;
+              padding-top: 60px;
+              display: inline-block;
             }
             .indigo {
                 background-color: var(--paper-indigo-500);
@@ -70,17 +89,31 @@ glyconnect structure view
             <h1> Structure </h1>
             <h3> Details for the selected glycan structure </h3>
         </div>
-        <div id="image">
+        <div class="layout horizontal flex">
+          <div id="image">
             <iron-image style="width:300px; height:200px;" sizing="contain"  src="http://mendel.isb-sib.ch:8083/image/cartoon/[[structureId]]?format=cfg"></iron-image>
+          </div>
+            <!-- <div id = "but">
+              <div>
+                <h3> Structure format </h3>
+              </div>
+                <paper-button class="indigo">GlyTouCan <a href="http://uniprot.org/uniprot/{{uniprotId}}">{{glytoucanId}}</a></paper-button>
+                <paper-button class="indigo">Text</paper-button>
+            </div> -->
+            <div id = "but">
+              <paper-material elevation="2" class="flex" style="background: #eeeeee; width:310px; color: black; padding: 10px">
+                GlyTouCan accession: <a href="{{urlToucan}}">{{touCan}}</a>
+              </paper-material>
+            </div>
         </div>
 
 
         <div>
-            <paper-tabs class="indigo" selected="{{selected}}"  no-bar>
+            <paper-tabs selected="{{selected}}"  no-bar>
                 <paper-tab>References ({{lenR}})</paper-tab>
-                <paper-tab style="background-color: #337ab7;">Enzymes</paper-tab>
+                <paper-tab>Enzymes</paper-tab>
                 <paper-tab>Family</paper-tab>
-                <paper-tab style="background-color: #337ab7;">Associations</paper-tab>
+                <paper-tab>Associations</paper-tab>
             </paper-tabs>
             <iron-pages selected="{{selected}}">
                 <paper-material elevation="2" class="flex" style="background: #eeeeee;">
@@ -201,7 +234,14 @@ glyconnect structure view
                 this.$.familyCall.generateRequest();
                 //Create References
                 this.references = this.structureData.references;
-                this.lenR = this.references.length
+                this.lenR = this.references.length;
+                this.crossref = this.structureData.crossreferences;
+                if (this.crossref.length > 0) {
+                  this.touCan = this.crossref[0].glytoucan.id;
+                  this.urlToucan = this.crossref[0].glytoucan.url;
+                } else {
+                  this.urlToucan = '';
+                  this.touCan = ''}
             }
         });
     </script>
