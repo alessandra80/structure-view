@@ -8,12 +8,11 @@
     "paper-tabs": "^2.0.0",
     "paper-button": "^2.0.0",
     "iron-pages": "^2.0.0",
-    "bs-timeline": "oce-timeline#^1.0.4",
     "paper-card": "PolymerElements/paper-card#^2.0.0",
     "paper-material": "PolymerElements/paper-material#^2.0.0",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.0",
     "iron-ajax": "PolymerElements/iron-ajax#^2.0.2",
-    "glyconnect-sankey": "https://github.com/universvm/glyconnect-sankey.git"
+    "glyconnect-sankey": "https://github.com/universvm/glyconnect-sankey.git#2.0"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview",
