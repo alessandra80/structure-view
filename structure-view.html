@@ -223,9 +223,11 @@ To use bs-timeline please add     "bs-timeline": "oce-timeline#^1.0.4", to bower
 
 
             changeStructureId(){
+              if(this.structureId !== undefined) {
                 var sCall = this.$.structureCall;
-                sCall.url = "http://mendel.isb-sib.ch:8083/api/structures/"+this.structureId;
+                sCall.url = "http://mendel.isb-sib.ch:8083/api/structures/" + this.structureId;
                 sCall.generateRequest();
+              }
             }
 
             handleResponse(){
